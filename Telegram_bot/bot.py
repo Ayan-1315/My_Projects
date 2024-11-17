@@ -21,7 +21,7 @@ except Exception as e:
 # Load the text generation pipeline
 try:
     print("Loading the model...")
-    pipe = pipeline("text2text-generation", model="google/flan-t5-large")
+    pipe = pipeline("text2text-generation", model="your_model") # choose a hugging face model based on text2text-generation
     print("Model loaded successfully!")
 except Exception as e:
     print("Error loading the pipeline:", e)
@@ -43,7 +43,7 @@ def help_command(message):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.add(
         telebot.types.InlineKeyboardButton(
-            'Message the developer', url='telegram.me/Ayan1315'
+            'Message the developer', url='your_telegram_url' # enter your telegram url
         )
     )
     bot.send_message(
@@ -70,7 +70,7 @@ def respond_to_message(message):
         # Generate response
         response = pipe(
             message.text,
-            max_new_tokens=500,  # Limit response length
+            max_new_tokens=50,  # Limit response length
             num_return_sequences=1  # Generate a single response
         )
         # Send the response back
@@ -81,9 +81,8 @@ def respond_to_message(message):
 
 # Start polling with error handling
 try:
-    print("Starting bot...")
-    bot.polling(none_stop=True)
     print("Bot is running .....")
+    bot.polling(none_stop=True)
 except Exception as e:
     print("Error running the bot:", e)
     traceback.print_exc()
