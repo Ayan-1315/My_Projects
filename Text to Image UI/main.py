@@ -18,7 +18,7 @@ def generate_image(prompt, guidance_scale, steps, seed):
 
 # Gradio UI
 with gr.Blocks() as demo:
-    gr.Markdown("## 🖼️ Text to Image with Stable Diffusers")
+    gr.Markdown("Text to Image with Stable Diffusers")
 
     with gr.Row():
         prompt = gr.Textbox(label="Prompt", placeholder="Enter your image description here")
