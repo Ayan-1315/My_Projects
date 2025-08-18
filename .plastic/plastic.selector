@@ -1,4 +1,0 @@
-repository "Cube Runner 2025-08-07_20-54-43/Cube Runner@13469845806919@cloud"
-  path "/"
-    br "/main"
-    co "/main"
